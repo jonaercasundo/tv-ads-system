@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+</head>
+<body style="background:black;color:white;text-align:center;margin-top:100px;">
+
+<h2>Admin Login</h2>
+
+@if(session('error'))
+    <p style="color:red">{{ session('error') }}</p>
+@endif
+
+<form method="POST" action="/login">
+    @csrf
+
+    <input type="text" name="username" placeholder="Username" required>
+    <br><br>
+
+    <input type="password" name="password" placeholder="Password" required>
+    <br><br>
+
+    <button type="submit">Login</button>
+</form>
+
+</body>
+</html>
